@@ -15,6 +15,11 @@ public:
     void setCabeza(Nodo* cabeza);
     int getLargo();
     void setLargo(int);
+    bool insertarElemento(int);
+    bool eliminarElemento(int);
+    int buscarElemento(int);
+    bool verificarListaVacia();
+    string recorrerListaCircular();
 
 protected:
     Nodo* cabeza;

@@ -34,3 +34,32 @@ int ListaCircularDoblementeEnlazada::getLargo() {
 void ListaCircularDoblementeEnlazada::setLargo(int largo) {
     ListaCircularDoblementeEnlazada::largo = largo;
 }
+
+bool ListaCircularDoblementeEnlazada::insertarElemento(int pDato) {
+    Nodo* nuevo = new Nodo();
+    nuevo->setInfo(pDato);
+    if (getCabeza() == NULL) {
+        setCabeza(nuevo);
+        nuevo->setSig(nuevo);
+    }
+    else {
+        nuevo->setSig(this->cabeza);
+        setCabeza(nuevo);
+    }
+    setLargo(getLargo() + 1);
+    return true;
+}
+
+bool ListaCircularDoblementeEnlazada::eliminarElemento(int) {
+    return true;
+}
+int ListaCircularDoblementeEnlazada::buscarElemento(int) {
+    return -1;
+}
+bool ListaCircularDoblementeEnlazada::verificarListaVacia() {
+    return true;
+}
+string ListaCircularDoblementeEnlazada::recorrerListaCircularDoblementeEnlazada() {
+    return "";
+}
+

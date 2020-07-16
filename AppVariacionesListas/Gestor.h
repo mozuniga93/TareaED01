@@ -16,7 +16,20 @@ private:
     ListaCircularDoblementeEnlazada listaCircularDoblementeEnlazada;
     Bicola bicola;
 public:
- 
+    //1. Metodos para lista circular
+    string insertarElementoListaCircular(const int);
+    string mostrarListaCircular();
+    string eliminarElementoListaCircular(const int);
+    string buscarElementoListaCircular(const int);
+    string verificarListaVaciaCircular();
+    int mostrarLargoListaCircular();
+    //2. Metodos para lista circular doblemente enlazada
+    string insertarElementoListaCircularDoblementeEnlazada(const int);
+    string mostrarListaCircularDoblementeEnlazada();
+    string eliminarElementoListaCircularDoblementeEnlazada(const int);
+    string buscarElementoListaCircularDoblementeEnlazada(const int);
+    string verificarListaVaciaCircularDoblementeEnlazada();
+    int mostrarLargoListaCircularDoblementeEnlazada();
 };
 
 #endif

@@ -17,6 +17,11 @@ public:
     void setAnterior(Nodo* anterior);
     int getLargo();
     void setLargo(int);
+    bool insertarElemento(int);
+    bool eliminarElemento(int);
+    int buscarElemento(int);
+    bool verificarListaVacia();
+    string recorrerListaCircularDoblementeEnlazada();
 
 protected:
     Nodo* cabeza;
