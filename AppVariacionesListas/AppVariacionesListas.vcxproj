@@ -147,7 +147,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bicola.cpp" />
+    <ClCompile Include="Gestor.cpp" />
+    <ClCompile Include="ListaCircular.cpp" />
+    <ClCompile Include="ListaCircularDoblementeEnlazada.cpp" />
+    <ClCompile Include="ListaDoblementeEnlazada.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Nodo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bicola.h" />
+    <ClInclude Include="Gestor.h" />
+    <ClInclude Include="ListaCircular.h" />
+    <ClInclude Include="ListaCircularDoblementeEnlazada.h" />
+    <ClInclude Include="ListaDoblementeEnlazada.h" />
+    <ClInclude Include="Nodo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
