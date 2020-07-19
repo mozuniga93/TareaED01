@@ -116,3 +116,76 @@ int Gestor::mostrarLargoListaCircularDoblementeEnlazada() {
 	largo = listaCircular.getLargo();
 	return largo;
 }
+
+//3. Metodos para lista  doblemente enlazada
+string Gestor::insertarElementoListaDoblementeEnlazada(const int pDato) {
+	bool msg;
+	string resp;
+	msg = listaDoblementeEnlazada.insertarElemento(pDato);
+	if (msg) {
+		resp = "Numero entero agregado con exito.";
+	}
+	else {
+		resp = "Numero entero no se pudo agregar. Intente de nuevo.";
+	}
+	return resp;
+}
+
+string Gestor::mostrarListaDoblementeEnlazada() {
+	return listaDoblementeEnlazada.recorrerDoblementeEnlazada();
+}
+
+string Gestor::eliminarElementoListaDoblementeEnlazada(int pDato) {
+	bool msg;
+	string resp;
+	msg = listaDoblementeEnlazada.eliminarElemento(pDato);
+	if (msg) {
+		resp = "Numero entero eliminado con exito.";
+	}
+	else {
+		resp = "Numero entero no se pudo eliminar. Intente de nuevo.";
+	}
+	return resp;
+}
+
+string Gestor::verificarListaVaciaDoblementeEnlazada() {
+	bool msg;
+	string resp;
+	msg = listaDoblementeEnlazada.verificarListaVacia();
+	if (msg) {
+		resp = "Lista se encuentra vacia";
+	}
+	else {
+		resp = "Lista con elementos registrados";
+	}
+	return resp;
+}
+
+int Gestor::mostrarLargoListaDoblementeEnlazada() {
+	return listaDoblementeEnlazada.getLargo();
+}
+
+// Bicola
+void Gestor::agregarAlfrente(int num) {
+	bicola.agregarAlfrente(num);
+}
+void Gestor::agregarAlfinal(int num) {
+	bicola.agregarAlfinal(num);
+}
+int Gestor::removerAlfrente() {
+	return bicola.removerAlfrente();
+}
+int Gestor::removerAlfinal() {
+	return bicola.removerAlfinal();
+}
+string Gestor::esVacio() {
+	if (bicola.esVacia()) {
+		return "Lo sentimos, la lista se encuentra vacia";
+	}
+	else {
+		return "La si lista contiene elementos";
+	}
+}
+int Gestor::longitud() {
+	return bicola.getCant();
+}
