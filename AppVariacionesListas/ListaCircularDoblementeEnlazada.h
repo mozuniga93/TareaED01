@@ -11,10 +11,10 @@ public:
     ListaCircularDoblementeEnlazada();
 
     //accessors
-    Nodo* getCabeza() const;
-    void setCabeza(Nodo* cabeza);
-    Nodo* getAnterior() const;
-    void setAnterior(Nodo* anterior);
+    Nodo* getPrimero() const;
+    void setPrimero(Nodo* cabeza);
+    Nodo* getUltimo() const;
+    void setUltimo(Nodo* cabeza);
     int getLargo();
     void setLargo(int);
     bool insertarElemento(int);
@@ -24,8 +24,8 @@ public:
     string recorrerListaCircularDoblementeEnlazada();
 
 protected:
-    Nodo* cabeza;
-    Nodo* anterior;
+    Nodo* primero;
+    Nodo* ultimo;
     int largo;
 };
 

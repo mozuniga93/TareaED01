@@ -11,8 +11,10 @@ public:
     ListaCircular();
 
     //accessors
-    Nodo* getCabeza() const;
-    void setCabeza(Nodo* cabeza);
+    Nodo* getPrimero() const;
+    void setPrimero(Nodo* cabeza);
+    Nodo* getUltimo() const;
+    void setUltimo(Nodo* cabeza);
     int getLargo();
     void setLargo(int);
     bool insertarElemento(int);
@@ -22,7 +24,8 @@ public:
     string recorrerListaCircular();
 
 protected:
-    Nodo* cabeza;
+    Nodo* primero;
+    Nodo* ultimo;
     int largo;
 };
 

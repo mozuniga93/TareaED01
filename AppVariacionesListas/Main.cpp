@@ -10,6 +10,7 @@ using namespace std;
 int menuPrincipal(int answer);
 void menuListaCircular();
 int menuListaCircularImp(int answer);
+int menuListaDoblementeEnlazadaCircularImp(int answer);
 void menuListaDoblementeEnlazada();
 void menuListaCircularDoblementeEnlazada();
 void menuBicola();
@@ -187,7 +188,7 @@ void menuListaCircularDoblementeEnlazada()
         cout << "-------------------------------------" << endl;
         cin >> answer;
 
-        menuListaCircularImp(answer);
+        menuListaDoblementeEnlazadaCircularImp(answer);
 
         if (answer == 0)
         {
