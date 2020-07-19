@@ -57,38 +57,56 @@ bool ListaCircularDoblementeEnlazada::insertarElemento(int pDato) {
 }
 
 bool ListaCircularDoblementeEnlazada::eliminarElemento(int pDato) {
-    Nodo* aux = new Nodo();
-    aux = getPrimero();
+    Nodo* actual = new Nodo();
+    actual = getPrimero();
+    Nodo* anterior = new Nodo();
+    anterior = NULL;
+    bool encontrado = false;
+    if (getPrimero() != NULL) {
+        do {
 
-    //Primero verificar si esta vacia
-    if (verificarListaVacia()) {
-        return false;
-    }
-    //Hacer que lista apunte al nodo anterior al de valor v
-    do {
-        if (getPrimero()->getSig()->getInfo() != pDato) {
-            setPrimero(getPrimero()->getSig());
-        }
-    } while (getPrimero()->getSig()->getInfo() != pDato && aux != getPrimero());
+            if (actual->getInfo() == pDato) {
+                
+                if (getPrimero()->getSig() == getPrimero()) {
+                    delete getPrimero();
+                    setPrimero(NULL);
+                    setUltimo(NULL);
+                    setLargo(getLargo() - 1);
+                }
+                else if (actual == getPrimero()) {
+                    setPrimero(getPrimero()->getSig());
+                    getPrimero()->setAnt(getUltimo());
+                    getUltimo()->setSig(getPrimero());
+                    setLargo(getLargo() - 1);
+                }
+                else if (actual == getUltimo()) {
+                    setUltimo(anterior);
+                    getUltimo()->setSig(getPrimero());
+                    getPrimero()->setAnt(getUltimo());
+                    setLargo(getLargo() - 1);
+                }
+                else {
 
-    // Si existe un nodo con el valor pDato:
-    if (getPrimero()->getSig()->getInfo() == pDato) {
-        // Y si la lista sólo tiene un nodo
-        if (getPrimero() == getPrimero()->getSig()) {
-            delete getPrimero();
-            setPrimero(NULL);
-            setUltimo(NULL);
-            setLargo(getLargo() - 1);
+                    anterior->setSig(actual->getSig());
+                    actual->getSig()->setAnt(anterior);
+                    setLargo(getLargo() - 1);
+                }
+                encontrado = true;
+            }
+
+            anterior = actual;
+            actual = actual->getSig();
+        } while (actual != primero && encontrado != true);
+
+        if (!encontrado) {
+            return encontrado;
         }
-        else {
-            // Si la lista tiene más de un nodo, borrar el nodo  de valor pDato
-            aux = getPrimero()->getSig();
-            getPrimero()->setSig(aux->getSig());
-            delete aux;
-            setLargo(getLargo() - 1);
-        }
+
     }
-    return true;
+    else {
+        return encontrado;
+    }
+    return encontrado;
 }
 int ListaCircularDoblementeEnlazada::buscarElemento(int pDato) {
     Nodo* raiz = getPrimero();
@@ -125,7 +143,7 @@ string ListaCircularDoblementeEnlazada::recorrerListaCircularDoblementeEnlazada(
         Nodo* aux = getPrimero();
         int contador = 1;
         do {
-            rslt += "Dato(" + to_string(contador) + ")=" + to_string(aux->getInfo()) + "\n";
+            rslt += "" + to_string(aux->getInfo()) + "\n";
             aux = aux->getSig();
             contador++;
         } while (aux != raiz);

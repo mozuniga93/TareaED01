@@ -355,6 +355,7 @@ void insertarElementoListaCircular()
 
 void imprimirListaCircular()
 {
+    cout << "--------------------------------------" << endl;
     cout << gestor->mostrarListaCircular() << endl;
 }
 
@@ -443,6 +444,7 @@ void insertarElementoListaCircularDoblementeEnlazada()
 
 void imprimirListaCircularDoblementeEnlazada()
 {
+    cout << "--------------------------------------" << endl;
     cout << gestor->mostrarListaCircularDoblementeEnlazada() << endl;
 }
 

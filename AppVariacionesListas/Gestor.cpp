@@ -113,10 +113,9 @@ string Gestor::verificarListaVaciaCircularDoblementeEnlazada() {
 }
 int Gestor::mostrarLargoListaCircularDoblementeEnlazada() {
 	int largo;
-	largo = listaCircular.getLargo();
+	largo = listaCircularDoblementeEnlazada.getLargo();
 	return largo;
 }
-
 //3. Metodos para lista  doblemente enlazada
 string Gestor::insertarElementoListaDoblementeEnlazada(const int pDato) {
 	bool msg;
@@ -130,11 +129,9 @@ string Gestor::insertarElementoListaDoblementeEnlazada(const int pDato) {
 	}
 	return resp;
 }
-
 string Gestor::mostrarListaDoblementeEnlazada() {
 	return listaDoblementeEnlazada.recorrerDoblementeEnlazada();
 }
-
 string Gestor::eliminarElementoListaDoblementeEnlazada(int pDato) {
 	bool msg;
 	string resp;
@@ -147,7 +144,6 @@ string Gestor::eliminarElementoListaDoblementeEnlazada(int pDato) {
 	}
 	return resp;
 }
-
 string Gestor::verificarListaVaciaDoblementeEnlazada() {
 	bool msg;
 	string resp;
@@ -160,11 +156,9 @@ string Gestor::verificarListaVaciaDoblementeEnlazada() {
 	}
 	return resp;
 }
-
 int Gestor::mostrarLargoListaDoblementeEnlazada() {
 	return listaDoblementeEnlazada.getLargo();
 }
-
 // Bicola
 void Gestor::agregarAlfrente(int num) {
 	bicola.agregarAlfrente(num);
