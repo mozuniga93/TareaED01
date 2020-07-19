@@ -27,7 +27,6 @@ void eliminarElementoListaCircularDoblementeEnlazada();
 void buscarElementoListaCircularDoblementeEnlazada();
 void verificarListaVaciaCircularDoblementeEnlazada();
 void calcularLongitudListaCircularDoblementeEnlazada();
-
 void agregarAlfrente();
 int menuListaBicolaImp(int answer);
 void agregarAlfinal();

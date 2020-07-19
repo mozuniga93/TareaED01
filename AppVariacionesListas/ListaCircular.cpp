@@ -77,6 +77,7 @@ bool ListaCircular::eliminarElemento(int pDato) {
                 else if (actual == getUltimo()) {
                     anterior->setSig(primero);
                     setUltimo(anterior);
+                    setLargo(getLargo() - 1);
                 }
                 else {
                     anterior->setSig(actual->getSig());
