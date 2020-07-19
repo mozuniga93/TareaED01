@@ -169,7 +169,55 @@ int menuListaCircularImp(int answer)
 //2. Menu para lista doblemente enlazada
 void menuListaDoblementeEnlazada()
 {
-
+    bool out = true;
+    int opcion, numero1;
+    do {
+        cout << "-------------------------------------" << endl;
+        cout << "LISTA DOBLEMENTE ENLAZADA" << endl;
+        cout << "-------------------------------------" << endl;
+        cout << "Favor digite una opcion:" << endl;
+        cout << "1. Agregar elemento a lista doblemente enlazada." << endl;
+        cout << "2. Imprimir lista doblemente enlazada." << endl;
+        cout << "3. Eliminar elemento de lista doblemente enlazada." << endl;//prueba del repo
+        cout << "4. Verificar si lista esta vacia." << endl;
+        cout << "5. Calcular longitud de lista." << endl;
+        cout << "6. Volver al menu principal." << endl;
+        cout << "0. Salir." << endl;
+        cout << "-------------------------------------" << endl;
+        cin >> opcion;
+        switch (opcion)
+        {
+        case 0:
+            cout << "Gracias por usar el sistema." << endl;
+            out = false;
+            break;
+        case 1:
+            cout << "Digite el numero que desea agregar: ";
+            cin >> numero1;
+            cout << gestor->insertarElementoListaDoblementeEnlazada(numero1) << endl;
+            break;
+        case 2:
+            cout << gestor->mostrarListaDoblementeEnlazada() << endl;
+            break;
+        case 3:
+            cout << "Digite la posicion del numero que desea eliminar: ";
+            cin >> numero1;
+            cout << gestor->eliminarElementoListaDoblementeEnlazada(numero1) << endl;
+            break;
+        case 4:
+            cout << gestor->verificarListaVaciaDoblementeEnlazada() << endl;
+            break;
+        case 5:
+            cout << "La lista contiene "<<gestor->mostrarLargoListaDoblementeEnlazada() <<" elementos agregados"<< endl;
+            break;
+        case 6:
+            main();
+            break;
+        default:
+            cout << "Opcion incorrecta. Favor digite de nuevo." << endl;
+            break;
+        }
+    } while (out);
 }
 
 //3. Menu para lista circular doblemente enlazada
