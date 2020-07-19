@@ -30,6 +30,13 @@ public:
     string buscarElementoListaCircularDoblementeEnlazada(const int);
     string verificarListaVaciaCircularDoblementeEnlazada();
     int mostrarLargoListaCircularDoblementeEnlazada();
+    //4. Metodos para bicola
+    void agregarAlfrente(int);
+    void agregarAlfinal(int);
+    int removerAlfrente();
+    int removerAlfinal();
+    string esVacio();
+    int longitud();
 };
 
 #endif

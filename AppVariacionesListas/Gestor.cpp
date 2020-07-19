@@ -116,3 +116,28 @@ int Gestor::mostrarLargoListaCircularDoblementeEnlazada() {
 	largo = listaCircular.getLargo();
 	return largo;
 }
+
+// Bicola
+void Gestor::agregarAlfrente(int num) {
+	bicola.agregarAlfrente(num);
+}
+void Gestor::agregarAlfinal(int num) {
+	bicola.agregarAlfinal(num);
+}
+int Gestor::removerAlfrente() {
+	return bicola.removerAlfrente();
+}
+int Gestor::removerAlfinal() {
+	return bicola.removerAlfinal();
+}
+string Gestor::esVacio() {
+	if (bicola.esVacia()) {
+		return "Lo sentimos, la lista se encuentra vacia";
+	}
+	else {
+		return "La si lista contiene elementos";
+	}
+}
+int Gestor::longitud() {
+	return bicola.getCant();
+}

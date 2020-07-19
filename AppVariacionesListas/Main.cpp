@@ -26,6 +26,14 @@ void eliminarElementoListaCircularDoblementeEnlazada();
 void buscarElementoListaCircularDoblementeEnlazada();
 void verificarListaVaciaCircularDoblementeEnlazada();
 void calcularLongitudListaCircularDoblementeEnlazada();
+
+void agregarAlfrente();
+int menuListaBicolaImp(int answer);
+void agregarAlfinal();
+void removerAlfrente();
+void removerAlfinal();
+void consultarLongitud();
+void esVacia();
 //GESTOR
 static Gestor* gestor = new Gestor();
 
@@ -237,7 +245,37 @@ int menuListaDoblementeEnlazadaCircularImp(int answer)
 //4. Menu para bicola
 void menuBicola()
 {
+    int answer;
+    bool keepLooping = true;
 
+    do
+    {
+        cout << "-------------------------------------" << endl;
+        cout << "TAD Bicola" << endl;
+        cout << "-------------------------------------" << endl;
+        cout << "Favor digite una opcion:" << endl;
+        cout << "1. Agregar elemento al frente." << endl;
+        cout << "2. Agregar elemento al final." << endl;
+        cout << "3. Remover al frente." << endl;
+        cout << "4. Revormer al final." << endl;
+        cout << "5. Verificar si lista esta vacia." << endl;
+        cout << "6. Calcular longitud de lista." << endl;
+        cout << "7. Volver al menu principal." << endl;
+        cout << "0. Salir." << endl;
+        cout << "-------------------------------------" << endl;
+        cin >> answer;
+
+        menuListaBicolaImp(answer);
+
+        if (answer == 0)
+        {
+            keepLooping = false;
+        }
+        else
+        {
+            keepLooping = true;
+        }
+    } while (keepLooping);
 }
 
 //METODOS PARA VARIACIONES DE LISTAS
@@ -417,3 +455,114 @@ void calcularLongitudListaCircularDoblementeEnlazada()
 }
 
 //4. Metodos para menu de bicola
+
+int menuListaBicolaImp(int answer)
+{
+    switch (answer)
+    {
+    case 1:
+        agregarAlfrente();
+        break;
+    case 2:
+        agregarAlfinal();
+        break;
+    case 3:
+        removerAlfrente();
+        break;
+    case 4:
+        removerAlfinal();
+        break;
+    case 5:
+        esVacia();
+        break;
+    case 6:
+        consultarLongitud();
+        break;
+    case 7:
+        main();
+        break;
+    case 0:
+        cout << "Gracias por usar el sistema." << endl;
+        break;
+    default:
+        cout << "Opcion incorrecta. Favor digite de nuevo." << endl;
+    }
+    return answer;
+}
+
+void agregarAlfrente() {
+    int input = -1;
+    bool valid = false;
+    do
+    {
+        cout << "Favor digite un numero entero a agregar: " << flush;
+        cin >> input;
+        if (cin.good())
+        {
+            valid = true;
+        }
+        else
+        {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Error. Favor inserte un numero entero." << endl;
+        }
+    } while (!valid);
+
+    gestor->agregarAlfrente(input);
+
+    cout << "El numero: " << to_string(input) << " ha sido agregado al frente de la lista"<<endl;
+}
+
+void agregarAlfinal() {
+    int input = -1;
+    bool valid = false;
+    do
+    {
+        cout << "Favor digite un numero entero a agregar: " << flush;
+        cin >> input;
+        if (cin.good())
+        {
+            valid = true;
+        }
+        else
+        {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Error. Favor inserte un numero entero." << endl;
+        }
+    } while (!valid);
+
+    gestor->agregarAlfinal(input);
+    cout << "El numero: " << to_string(input) << " ha sido agregado al final de la lista"<<endl;
+}
+
+void removerAlfrente() {
+    int num = gestor->removerAlfrente();
+    if (num == -1) {
+        cout<<"No se encuentran elementos en la lista"<<endl;
+    }
+    else {
+        cout << "Se a removido el numero: " << to_string(num) << " de la lista" << endl;
+    }
+    
+}
+
+void removerAlfinal() {
+    int num = gestor->removerAlfinal();
+    if (num == -1) {
+        cout << "No se encuentran elementos en la lista"<<endl;
+    }
+    else {
+        cout << "Se ha removido el numero: " << to_string(num) << " de la lista" << endl;
+    }
+    
+}
+
+void consultarLongitud() {
+    cout << "En la lista se encuentran "<< to_string(gestor->longitud()) <<" elementos agregados" << endl;
+}
+
+void esVacia() {
+    cout << gestor->esVacio() <<endl;
+}
